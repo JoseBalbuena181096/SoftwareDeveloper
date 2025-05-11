@@ -170,3 +170,12 @@ Limpiar la terminal con el comando "clear"
 ![alt text](image-23.png)
 
 Salir de la terminal con el comando "exit"
+
+### Desafio Carpeta "código"
+En este ejercicio te proponemos explorar tu computadora y practicar algunos de los comandos básicos de la terminal.
+
+Utiliza los comandos pwd, cd y ls para navegar las carpeta de tu computadora.
+
+Cuando encuentres un buen lugar, utiliza el comando mkdir para crear una carpeta llamada source (o src) donde guardaremos nuestro código fuente (source code).
+![alt text](image-24.png)
+![alt text](image-25.png)
