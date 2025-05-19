@@ -116,3 +116,9 @@ console.log(unDulce, ranking);
 //unDulce = 'Churros';
 //console.log(unDulce, ranking);
 ```
+
+Tip
+Guardá y ejecutá tu programa en cada paso para ir controlando que todo funciona.
+
+Si algo falla, leé el error que Node te muestre en la terminal y pegalo en Google, vas a llegar a la solución muy fácil. T
+O pregunta a claude que ocurre.
