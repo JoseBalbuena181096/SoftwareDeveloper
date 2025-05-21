@@ -372,7 +372,642 @@ Usar var solo se debe de usar cuando se entiede que es scope y cuando se entiend
 El scope es el alcance de una variable, es decir, el lugar donde se puede acceder a la variable. El hoisting es el movimiento de las declaraciones de variables y funciones al inicio del archivo.
 
 
+### Comentarios
+
+Los comentarios son textos que se agregan en el código para proporcionar explicaciones o notas que no se ejecutan como parte del programa. Sirven para hacer el código más legible y para dejar instrucciones para otros devs. Hay dos tipos principales de comentarios en JavaScript:
+
+Una sola línea
+Se crean con //. Todo lo que viene después de // en esa línea se considera un comentario y se ignora durante la ejecución.
 
 
+```javascript
+// Esto es un comentario de una sola línea
+const dato = 5; // También se puede agregar al final de una línea de código
 
+console.log(dato);
+```
+
+
+Múltiples líneas
+Se crean entre /* y */.
+
+Pueden abarcar múltiples líneas y pueden contener texto explicativo más extenso.
+
+```javascript
+/* Este es un comentario
+   de múltiples líneas
+   útil para explicar bloques de código */
+
+const resultado = 10; 
+
+console.log(resultado);
+```
+
+### Ejemplo:
+```javascript
+// Datos del restaurante
+const nombreRestaurante = "La Deliciosa Cocina"; // Nombre del restaurante
+const direccionRestaurante = "123 Calle Principal, Ciudad"; // Dirección del restaurante
+const telefonoRestaurante = "+1 (123) 456-7890"; // Número de teléfono del restaurante
+
+// Datos del menú del restaurante
+const plato1Nombre = "Pizza Margarita";
+const plato1Precio = 12.99;
+const plato1Descripcion = "Una deliciosa pizza con tomate y albahaca.";
+
+const plato2Nombre = "Pasta Alfredo";
+const plato2Precio = 14.99;
+const plato2Descripcion = "Fettuccine con salsa cremosa de queso parmesano.";
+
+const plato3Nombre = "Ensalada César";
+const plato3Precio = 8.99;
+const plato3Descripcion = "Lechuga, crutones, parmesano y aderezo César.";
+
+// Horario de funcionamiento del restaurante
+
+const horarioLunes = "10:00 AM - 9:00 PM";
+const horarioMartes = "10:00 AM - 9:00 PM";
+const horarioMiercoles = "10:00 AM - 9:00 PM";
+const horarioJueves = "10:00 AM - 9:00 PM";
+const horarioViernes = "10:00 AM - 10:00 PM";
+const horarioSabado = "11:00 AM - 10:00 PM";
+const horarioDomingo = "11:00 AM - 8:00 PM";
+
+// Comentarios explicativos
+
+/*
+   En este código
+   - Tenemos información como el nombre, dirección y teléfono del restaurante.
+   - También representamos el menú del restaurante mediante múltiples variables para cada plato, incluyendo nombre, precio y descripción.
+   - Adicionalmente, se muestra el horario de funcionamiento del restaurante para cada día de la semana utilizando variables separadas.
+*/
+
+
+console.log(horarioLunes);
+
+```
+
+### Tipos de datos
+Los tipos de datos definen cómo se almacena, se organiza y se opera con la información dentro de un programa, permitiendo que trabajemos con números, texto, fechas y estructuras complejas de manera efectiva.
+
+- Programar es principalmente manipular datos.
+- Los datos tienen un tipo y estos tipos tienen una regla de operacion basica dependiendo del tipo, del dato.
+
+### Tipos de datos primitivos
+
+1. String:  se escribe entre comillas "hola mundo", basicamente es texto.
+2. Number:  se escribe sin comillas 123, basicamente es un numero, puede ser entero o decimal.
+3. Boolean:  se escribe sin comillas true o false, basicamente es un valor binario, es decir, puede ser verdadero o falso.
+4. Undefined:  se escribe sin comillas undefined, basicamente es un valor indefinido.
+5. NaN:  se escribe sin comillas NaN, basicamente es un valor no numerico.
+
+- Los tipos de datos son etiquetas que le indican al lenguaje de programación como interpretar y manipular estos datos.
+
+Tenemos tipados de datos extrictos y no extrictos.
+
+- Tipados estrictos:    
+Una variable es de un tipo de datos y no puede ser de otro tipo de datos.
+
+- Tipados inferidos:    
+Una variable puede ser de un tipo de datos y puede ser de otro tipo de datos.
+
+En javascript no se puede (todavía) señalar
+el tipo de dato, ya que es un lenguaje 
+de "tipo inferido".
+
+Esto quiere decir que reconoce el tipo y se lo asigna
+en base al valor que le asignamos al dato. 
+
+La compilacion es el proceso de convertir el codigo fuente en codigo objeto. Y la interpretacion es el proceso de convertir el codigo fuente en codigo objeto en tiempo de ejecucion.
+
+Para saber el tipo de dato en javascript se puede usar el operador typeof.
+
+```javascript
+console.log(typeof "hola mundo"); // string
+console.log(typeof 123); // number
+console.log(typeof true); // boolean
+console.log(typeof undefined); // undefined
+console.log(typeof NaN); // number
+```
+
+Motivos para saber el tipo de dato:
+
+- Es importante saber que el tipo de dato porque asi javascrip puede saber como guardarlo en la memoria RAM permite a la computadora reservar la cantidad adecuada de memoria para 
+almacenar un valor, no es mismo guardar un numero que guardar un texto.
+
+- Cada tipo de dato, nos va a permitir realizar operaciones diferentes, por el tipo de dato.
+
+
+JavaScript no va interpretar lo mismo cuando queramos sumar dos números y dos textos.
+Dependiendo del tipo de dato va a ejecutar dos operaciones diferentes.
+
+```javascript
+console.log(1 + 2); // 3
+console.log("1" + "2"); // "12"
+```
+
+Codigo de clase:
+```javascript
+
+const peli = "Jurassic Park";
+const estreno = 1993;
+
+const currentYear = 2023;
+const tiempo = peli - estreno;
+console.log(tiempo);
+
+/* 
+NaN: Not a number
+
+Programar es manipular datos. 
+Datos que tienen que ver con el problema que estamos resolviendo.
+Estos datos van a ser cosas como números, textos, fechas, etc.
+
+Los lenguajes de programación diferencian cada tipo de dato 
+y esto nos ayuda a manipularlos.
+
+Hoy vamos a introducirnos al concepto: tipos de datos 
+ */
+```
+
+```typescript
+const movieName: string = "Jurassic Park";
+const releaseDate: number = 1993;
+
+console.log(movieName, releaseDate);
+
+/* 
+Podemos pensar a los tipos como "etiquetas" 
+que se le asignan a los datos para 
+saber qué tipo de información representan.
+
+En lenguajes como Typescript (Nivel 1) podemos 
+indicarle el tipo de a cada dato. Esto sirve.
+
+Estas etiquetas le dicen al lenguaje de programación 
+cómo debe interpretar y manipular esos valores. 
+*/
+
+const nombre: number = 123;
+console.log(nombre);
+
+// tsc (para typechecking)
+```
+
+```c
+#include <stdio.h>
+
+int main() {
+    int numero = 42;
+
+    char texto[] = "Hola mundo!";
+
+    printf("Entero: %d\n", numero);
+    printf("Texto: %s\n", texto);
+
+    return 0;
+}
+
+/* 
+En algunos lenguajes como C, es obligatorio
+indicar el tipo de cada dato.
+*/
+
+// clang -o programita-en-c estricto.c
+```
+
+``` javascript
+const peli = "Jurassic Park";
+console.log(peli, typeof peli);
+
+const estreno = 1993;
+console.log(estreno, typeof estreno);
+
+// const nombre: string = "Marce";
+
+/* 
+En javascript no se puede (todavía) señalar
+el tipo de dato, ya que es un lenguaje 
+de "tipo inferido".
+
+Esto quiere decir que reconoce el tipo y se lo asigna
+en base al valor que le asignamos al dato. 
+*/
+```
+
+```javascript
+// typeof
+const movieName = "Jurassic Park";
+console.log("Nombre de peli:", movieName);
+console.log("Tipo:", typeof movieName);
+
+console.log("------");
+
+const year = 1993;
+const tipoDeYear = typeof year;
+//        ^----------"number"
+
+console.log("tipoDeYear:", tipoDeYear);
+
+/* 
+https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/typeof
+*/
+```
+
+```javascript
+const bebida = "Mate";
+// 01101101 01100001 01110100 01100101
+
+const mundial = 2022;
+// 11111100110
+
+/* ¿Para que sirven?
+Los tipos de datos ayudan a la computadora 
+a asignar y gestionar la memoria de manera eficiente. 
+
+Saber el tipo de dato permite a la computadora 
+reservar la cantidad adecuada de memoria para 
+almacenar un valor.
+*/
+```
+
+## Caracteres ASCII en binario
+
+<!-- https://developer.mozilla.org/es/docs/Glossary/ASCII -->
+
+| Carácter | Valor ASCII | Binario ASCII |
+| -------- | ----------- | ------------- |
+| A        | 65          | 1000001       |
+| B        | 66          | 1000010       |
+| C        | 67          | 1000011       |
+| D        | 68          | 1000100       |
+| E        | 69          | 1000101       |
+| F        | 70          | 1000110       |
+| G        | 71          | 1000111       |
+| H        | 72          | 1001000       |
+| I        | 73          | 1001001       |
+| J        | 74          | 1001010       |
+| K        | 75          | 1001011       |
+| L        | 76          | 1001100       |
+| M        | 77          | 1001101       |
+| N        | 78          | 1001110       |
+| O        | 79          | 1001111       |
+| P        | 80          | 1010000       |
+| Q        | 81          | 1010001       |
+| R        | 82          | 1010010       |
+| S        | 83          | 1010011       |
+| T        | 84          | 1010100       |
+| U        | 85          | 1010101       |
+| V        | 86          | 1010110       |
+| W        | 87          | 1010111       |
+| X        | 88          | 1011000       |
+| Y        | 89          | 1011001       |
+| Z        | 90          | 1011010       |
+| a        | 97          | 1100001       |
+| b        | 98          | 1100010       |
+| c        | 99          | 1100011       |
+| d        | 100         | 1100100       |
+| e        | 101         | 1100101       |
+| f        | 102         | 1100110       |
+| g        | 103         | 1100111       |
+| h        | 104         | 1101000       |
+| i        | 105         | 1101001       |
+| j        | 106         | 1101010       |
+| k        | 107         | 1101011       |
+| l        | 108         | 1101100       |
+| m        | 109         | 1101101       |
+| n        | 110         | 1101110       |
+| o        | 111         | 1101111       |
+| p        | 112         | 1110000       |
+| q        | 113         | 1110001       |
+| r        | 114         | 1110010       |
+| s        | 115         | 1110011       |
+| t        | 116         | 1110100       |
+| u        | 117         | 1110101       |
+| v        | 118         | 1110110       |
+| w        | 119         | 1110111       |
+| x        | 120         | 1111000       |
+| y        | 121         | 1111001       |
+| z        | 122         | 1111010       |
+| 0        | 48          | 0110000       |
+| 1        | 49          | 0110001       |
+| 2        | 50          | 0110010       |
+| 3        | 51          | 0110011       |
+| 4        | 52          | 0110100       |
+| 5        | 53          | 0110101       |
+| 6        | 54          | 0110110       |
+| 7        | 55          | 0110111       |
+| 8        | 56          | 0111000       |
+| 9        | 57          | 0111001       |
+| !        | 33          | 0100001       |
+| @        | 64          | 1000000       |
+| ?        | 63          | 0111111       |
+
+```javascript
+const peli = "Jurassic Park";
+
+console.log("Dato: peli");
+console.log("Valor:", peli);
+console.log("Tipo:", typeof peli);
+console.log("Cantidad de letras:", peli.length);
+
+const estreno = 1993;
+
+console.log("Dato: estreno");
+console.log("Valor:", estreno);
+console.log("Tipo:", typeof estreno);
+console.log("Cantidad de letras:", estreno.length);
+
+/* 
+El tipo de dato también va a definirnos que tipo
+de operaciones podemos hacer con este dato. 
+Por ejemplo: Los strings tienen una propiedad
+length que nos dice la cantidad de caracteres que
+tiene el texto. 
+
+Los numbers no tienen esta propiedad.
+
+Esto de .length lo vamos a entender en profundidad
+cuando veamos objetos.
+*/
+```
+
+```javascript
+const numA = 9;
+const numB = 3;
+const resultado = numA + numB;
+
+console.log("Resultado:", resultado);
+
+const nombre = "Marce";
+const apellido = "Zapaia";
+console.log(typeof nombre, typeof apellido);
+const nombreCompleto = nombre + apellido;
+
+console.log("nombreCompleto:", nombreCompleto);
+
+// console.log("nombre:", nombre);
+// console.log("apellido:", apellido);
+
+/* 
+De la misma forma, Javascript no va a interpretar
+lo mismo cuando queramos sumar dos números y dos textos.
+
+Dependiendo de su tipo de dato va a ejecutar
+dos operaciones diferentes.
+ */
+```
+
+```javascript
+let edad = 30;
+console.log("Edad:", edad);
+console.log("Tipo:", typeof edad);
+
+console.log("----");
+
+edad = "Treinta";
+console.log("Edad:", edad);
+console.log("Tipo:", typeof edad);
+
+/* Javascript, además de ser de tipo inferido,
+es de tipo dinámico.
+
+Esto significa que, en el caso de las variables, 
+les asigna el tipo de dato a medida que va ejecutando el
+programa. 
+
+O sea que un idenfiticador puede cambiar su tipo ya que depende
+de su valor.
+
+ADVERTENCIA
+Esta es una práctica que tiene sus riesgos.
+Tratemos de que el código sea predecible.
+No vale la pena ahorrar en variables/constantes.
+*/
+```
+
+### Primitivos
+Cuando programamos, manipulamos un montón de datos. Esos datos van a vivir dentro de la memoria en forma de unos y ceros aunque para nosotros (devs) van a ser más que eso. Esos unos y ceros van a representar el email de una persona, su contraseña, la cantidad de productos en un carrito de compras, el precio de los productos, etc.
+
+Para crear aplicaciones que contemplen todos estos datos, JavaScript nos ofrece 7 tipos de datos llamados primitivos para representar todo lo que vamos a construir.
+
+```javascript
+
+const nombrePlaneta = "Tierra"; // string
+const diametro = 12742; // number
+const temperaturaMedia = 14.9; // number
+const tieneLunas = true; // boolean
+
+let fechaDescubrimiento; // undefined
+const datosAtmosfera = null; // null
+
+const codigoIdentificacion = Symbol("Tierra"); // Symbol
+const poblacion = 7800000000n; // BigInt
+```
+
+Además de los datos primitivos existen los denominados objetos, que son formas de agrupar datos que pueden ser primitivos u otros objetos.
+
+```javascript
+// esta es una de las formas de crear objetos
+const planeta = {
+  nombre: "Tierra",
+  diametro: 12742
+}
+
+console.log(planeta.diametro);
+```
+
+Vamos a hablar sobre objetos en profundidad más adelante y durante toda la carrera.
+
+### Átomos
+Los datos primitivos en JavaScript se llaman así debido a que son los elementos más básicos o fundamentales que se utilizan para representar valores en un programa.
+
+Podemos comparar a los primitivos con las letras de un alfabeto, donde las letras en sí representan un valor muy atómico o pequeño. Al igual que con las letras, al combinar algunos de estos primitivos, podemos crear palabras con significado, como "casa" o "perro". Y, de manera similar, al agrupar palabras podemos construir frases.
+
+```
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+PERRO - GATO - CASA - JUGAR
+
+EL PERRO ESTÁ JUGANDO
+```
+
+En el caso de los datos primitivos sucede algo parecido. Estos nos sirven para representar partes del problema que estamos resolviendo y al agruparlos en un objeto es que podemos representar cosas más complejas como una “persona” o un “producto”.
+
+```javascript
+const nombre = "JavaScript Apart Hotel";
+const habitaciones = 4;
+const hayDisponibilidad = true;
+
+// agrupados en un objeto
+const hotel = {
+  nombre: "JavaScript Apart Hotel",
+  habitaciones: 4,
+  hayDisponibilidad: true,
+}
+
+console.log(hotel.nombre);
+```
+
+En esta clase vamos a explorar los datos primitivos y sus usos básicos. Más adelante cuando entendamos el concepto de objeto y de funcion vamos a ver operaciones más realistas y complejas de estos datos.
+
+String
+Un string en JavaScript es un tipo de dato que se utiliza para representar texto, como palabras, frases o caracteres. String es el nombre que se le da a los textos en varios lenguajes. En otros lenguajes existe el tipo char (carácter en inglés) que representa a datos de un solo carácter (“a”). String (cadena en inglés) se refiere a un texto con varios caracteres, o sea una cadena de caracteres.
+
+Los strings se crean mediante la agrupación de caracteres entre comillas simples (' '), comillas dobles (" ") o comillas invertidas (`).
+```javascript
+// Comillas dobles 
+const textoA = "Este es un string con comillas dobles."; 
+// - opción favorita
+// - no puedo usar comillas dobles dentro del string
+// - no se pueden insertar saltos de línea
+
+
+// Comillas simples
+const textoB = 'Este es un "string" con comillas simples.';
+// Por lo general se usa para poder usar comillas dobles
+
+// Comillas invertidas (template literals)
+const nombre = "Marce";
+const textoC = `
+Hola ${nombre}, 
+Este es un string con comillas invertidas.
+Al uso de comillas invertidas para crear strings 
+se lo conoce como template literals.
+`;
+// Se pueden interpolar datos y usar saltos de linea
+```
+
+Number
+El tipo de dato number se utiliza para representar números, ya sean enteros o números decimales (números de punto flotante). Este tipo de dato es fundamental para realizar operaciones matemáticas y cálculos en JavaScript.
+```javascript
+// Números enteros
+const edad = 30;
+const cantidadDeProductos = 10;
+
+// Números de punto flotante (decimales)
+const precio = 19.99;
+const pi = 3.14159265359;
+
+// Operaciones matemáticas
+const suma = 5 + 3; // Suma
+const resta = 10 - 4; // Resta
+const multiplicacion = 6 * 7; // Multiplicación
+const division = 20 / 5; // División
+
+// Otros usos
+const total = precio * cantidadDeProductos;
+const radio = 5;
+const areaDeCirculo = Math.PI * (radio * radio); 
+// Usando la constante Math.PI
+```
+
+Boolean
+Este tipo de dato puede tener uno de dos valores posibles: true (verdadero) o false (falso).
+
+```javascript
+const hayStock = true;
+const tieneEnvio = false;
+
+console.log(typeof hayStock, typeof tieneEnvio);
+```
+El nombre "boolean" proviene del matemático y lógico británico George Boole.
+
+Los booleanos son fundamentales tomar de decisiones y el control de flujo en la programación, ya que permiten evaluar condiciones y determinar qué acciones tomar.
+
+Podemos crear un boolean asignando el valor true o false directamente a un identificador.
+
+```javascript
+const mostrarPromo = true;
+
+if(mostrarPromo){
+  console.log("¡Promoción especial!");
+}
+```
+
+Aunque, por lo general van a ser generados a partir de operaciones que tienen como respuesta si o no.
+```javascript
+const precio =  15;
+const esCaro = precio > 10;
+
+console.log(typeof esCaro, esCaro);
+
+if(esCaro){
+  console.log("¡Muy caro!");
+}
+```
+Más adelante, examinaremos con atención estos operadores de comparación (>) y la estructura if.
+
+Undefined
+Es un valor que indica que un identificador ha sido declarado pero no tiene asignado ningún valor. Es una representación de la ausencia de un valor válido.
+
+Esto puede ocurrir cuando se declara una variable pero no se le asigna ningún valor o cuando se accede a una propiedad que no existe en un objeto.
+```javascript
+// undefined es un tipo
+// console.log(estoNoExiste);
+console.log(typeof estoNoExiste);
+console.log(typeof estoNoExiste === "undefined");
+
+// y también es un valor
+let variableSinValor;
+console.log(variableSinValor);
+console.log(typeof variableSinValor);
+console.log(variableSinValor === undefined);
+```
+
+Null
+Es un valor especial que se utiliza para indicar que una variable o propiedad existe, pero no tiene ningún valor asignado. A diferencia de "undefined", que indica que la variable no ha sido inicializada, "null" es una asignación intencional que indica la ausencia de un valor válido. Se usa comúnmente cuando deseas establecer una variable u objeto en un estado inicial vacío o cuando deseas desvincular una variable de su valor anterior.
+
+```javascript
+// si el valor podría existir pero por algún motivo no existe
+// lo mejor sería utilizar null
+
+const persona = {
+  nombre: "Juli",
+  email: null
+};
+
+console.log(persona.email);
+
+// existe un bug histórico en JavaScript 
+// que define el typeof de null como "object"
+
+console.log(typeof persona.email);
+```
+
+- null vs undefined es que null es un valor intencional que indica que una variable o propiedad existe, pero no tiene ningún valor asignado. Por otro lado, undefined indica que no existe la variable o no se a asignado la variable.
+
+Vamos a entender los casos donde podamos usar null a medida que nos metamos a conceptos más avanzados como objetos o funciones.
+
+BigInt y Symbol
+Estos tipos primitivos tienen casos de usos más específicos y avanzados así que por ahora simplemente los vamos a nombrar y vamos a ver mucho más adelante en qué casos podríamos llegar a necesitarlos.
+
+```javascript
+// BigInt
+console.log("El número más grande posible dentro de un number", Number.MAX_SAFE_INTEGER);
+// BigInt al rescate
+const muchoMuyGrande = BigInt(
+  Number.MAX_SAFE_INTEGER * Number.MAX_SAFE_INTEGER
+);
+
+// Garantiza que los cálculos con números gigantes 
+// se realicen de manera precisa
+console.log(muchoMuyGrande);
+
+// Sybmbol
+const idPrivado = Symbol("nombre");
+
+const objeto = {
+  [idPrivado]: "Marce",
+  getNombre: function () {
+    return this[idPrivado];
+  },
+};
+
+console.log(objeto.nombre); // No se puede
+console.log(objeto.getNombre()); // Hay que usar el Symbol
+```
+
+Conclusión
+Aun siendo solo 7 los tipos de datos primitivos, en la práctica, los más utilizados suelen ser string, number, boolean, y null. Con estos bloques fundamentales, y al agruparlos en objetos y estructuras de datos, vamos a poder crear aplicaciones muy sencillas y también muy complejas.
 
