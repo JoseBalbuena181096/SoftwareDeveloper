@@ -975,7 +975,7 @@ console.log(persona.email);
 console.log(typeof persona.email);
 ```
 
-- null vs undefined es que null es un valor intencional que indica que una variable o propiedad existe, pero no tiene ningún valor asignado. Por otro lado, undefined indica que no existe la variable o no se a asignado la variable.
+- null vs undefined es que null es un valor intencional que indica que una variable o propiedad existe, pero no tiene ningún valor asignado. Por otro lado, undefined indica que no existe la variable o no se a asignado la variable. 
 
 Vamos a entender los casos donde podamos usar null a medida que nos metamos a conceptos más avanzados como objetos o funciones.
 
@@ -1011,3 +1011,276 @@ console.log(objeto.getNombre()); // Hay que usar el Symbol
 Conclusión
 Aun siendo solo 7 los tipos de datos primitivos, en la práctica, los más utilizados suelen ser string, number, boolean, y null. Con estos bloques fundamentales, y al agruparlos en objetos y estructuras de datos, vamos a poder crear aplicaciones muy sencillas y también muy complejas.
 
+## Objetos
+
+En un dato de tipo primitivo (string, number, etc) podemos guardar el título de una película, una sinopsis e inclusive podemos guardar su fecha de estreno declarando distintos datos para cada parte de la fecha (día, mes, año). Es decir, los primitivos son datos que representan cosas muy puntuales.
+
+
+```javascript
+const titulo = "Jurassic Park";
+const sinopsis = "Un multimillonario construye un parque de dinosaurios clonados, pero todo sale mal cuando los dinosaurios escapan y aterrorizan a los visitantes.";
+const añoEstreno = 1993;
+const mesEstreno = 6;
+const diaEstreno = 11;
+
+const director = "Steven Spielberg";
+const duracionMinutos = 127;
+const calificacionIMDb = 8.1;
+```
+
+Pero, ¿qué pasa si tenemos muchas películas? ¿cómo hacemos para organizar esa información?
+
+Si utilizamos solo datos primitivos, al no poder utilizar el mismo identificador más de una vez, nos vemos en la obligación de tener que generar una gran cantidad de identificadores distintos. Cada dato de cada película debe, entonces, tener un nombre distinto y además tendríamos que recordarlos para poder accederlos.
+
+```javascript
+const tituloJurassicPark = "Jurassic Park";
+const sinopsisJurassicPark = "Un multimillonario construye un parque temático con dinosaurios clonados, pero todo sale mal cuando los dinosaurios escapan y aterrorizan a los visitantes.";
+const añoEstrenoJurassicPark = 1993;
+const directorJurassicPark = "Steven Spielberg";
+const duracionMinutosJurassicPark = 127;
+const calificacionIMDbJurassicPark = 8.1;
+
+const tituloTerminator2 = "Terminator 2: Judgment Day";
+const sinopsisTerminator2 = "Un cyborg y un niño deben evitar que un avanzado Terminator de metal líquido provoque el fin del mundo.";
+const añoEstrenoTerminator2 = 1991;
+const directorTerminator2 = "James Cameron";
+const duracionMinutosTerminator2 = 137;
+const calificacionIMDbTerminator2 = 8.5;
+
+const tituloPulpFiction = "Pulp Fiction";
+const sinopsisPulpFiction = "Las vidas de dos sicarios de la mafia, un boxeador, la esposa de un gángster y una pareja de bandidos de un restaurante se entrelazan en cuatro relatos de violencia y redención.";
+const añoEstrenoPulpFiction = 1994;
+const directorPulpFiction = "Quentin Tarantino";
+const duracionMinutosPulpFiction = 154;
+const calificacionIMDbPulpFiction = 8.9;
+
+// Para utilizar estos datos tengo que de alguna forma saber el nombre de cada dato
+```
+
+En este ejemplo podemos ver que tan solo con 3 películas la cosa se empieza a poner confusa. Imaginen que tenemos que gestionar 50 películas… 1000 películas, la cosa se vuelve insostenible.
+
+Estructuras de datos
+
+![alt text](image-35.png)
+
+Para resolver este problema de organización de datos es que los lenguajes de programación nos ofrecen distintas formas de agrupar estos datos en estructuras que nos van a permitir manipular estos datos de formas mucho más ordenadas y a la vez complejas.
+
+En esta clase vamos a hablar de objetos. El otro tipo de dato que existe en JavaScript además de los primitivos. Eventualmente vamos a entender que en una app creada con JavaScript, casi todo es un objeto.
+
+![alt text](image-36.png)
+
+Objeto literal
+La forma más simple de empezar a entender los objetos es creando los llamados objetos literales. Esta es solo una de las tantas formas que existen para crear objetos y es una de las más directas y simples.
+
+Un objeto literal se crea muy similar a cualquier otro dato pero en vez de asignarle un valor entre comillas o un número como hacemos con los primitivos, lo que hacemos es usar el formato JSON.
+
+JavaScript Object Notation
+JSON es el formato que admite javascript para escribir objetos literales.
+
+```javascript
+// ------------------| lo que está entre llaves {} es JSON
+
+const miPrimerObjeto = { // aqui empieza el objeto
+  nombre: "Marce",
+  apx: true
+}; // aqui se termina el objeto
+
+console.log(typeof miPrimerObjeto);
+console.log(miPrimerObjeto.nombre);
+console.log(miPrimerObjeto.apx);
+```
+Esas llaves le indican a javascript que, lo que queremos asignarle a nuestro identificador, es un objeto literal. Al final de esta clase vamos a ver porque se llaman objetos literales.
+
+Lo que declaremos entre las llaves serán los valores que ese objeto contendrá.
+
+![alt text](image-37.png)
+
+Los datos contenidos dentro de un objeto se llaman propiedades. Por eso es que nos referimos muchas veces a la propiedad del objeto. Al estar estos datos contenidos dentro del objeto podemos crear varios objetos que contengan propiedades con el mismo nombre.
+
+```javascript
+// usando solo primitivos tenemos que usar muchos nombres
+const tituloJurassicPark = "Parque Jurásico";
+const añoEstrenoJurassicPark = 1993;
+const duracionMinutosJurassicPark = 127;
+
+
+const tituloTerminator2 = "Terminator 2: Judgment Day";
+const añoEstrenoTerminator2 = 1991;
+const duracionMinutosTerminator2 = 137;
+
+console.log(tituloJurassicPark);
+console.log(tituloTerminator2);
+
+// usando objetos podemos repetir los nombres dentro de los objetos
+const jurassicPark = {
+  titulo: "Parque Jurásico",
+  estreno: 1993,
+  duracionMinutos: 127,
+}
+
+const terminator2 = {
+  titulo: "Terminator 2: Judgment Day",
+  estreno: 1991,
+  duracionMinutos: 137,
+};
+
+// la propiedad titulo del objeto jurassicPark
+console.log(jurassicPark.titulo);
+
+// la propiedad titulo del objeto terminator2
+console.log(terminator2.titulo);
+
+```
+
+Objeto vacio
+Para poder entender mejor la sintaxis de JSON vamos de menos a más. Por ejemplo, si quisiéramos crear un objeto vacío lo único que tenemos que hacer es usar la llave de inicio y la llave de fin. Esto le indica a javascript que queremos crear un objeto sin propiedades.
+
+```javascript
+const peli = {};
+console.log(typeof peli, peli);
+```
+
+Objeto con una propiedad inicial
+Si quisiéramos crear un objeto con una sola propiedad inicial, debemos escribir dentro de las llaves la propiedad. Para eso simplemente escribimos el nombre de la propiedad (sin const ni let), a continuación el símbolo “:” (dos puntos) y luego de esos dos puntos, el valor que le queremos asignar a la propiedad. Este valor puede ser de cualquier tipo primitivo o inclusive otro objeto.
+
+```javascript
+const peli = { titulo:"Jurassic Park" };
+console.log(typeof peli, peli);
+
+const otraPeli = { durationMinutes:60 };
+console.log(typeof otraPeli, otraPeli);
+```
+En el caso de los objetos no necesitamos definir si los datos internos del objeto (las propiedades) son variables (let) o constantes (const) ya que vamos a poder modificar cualquier parte del objeto en cualquier momento. Vamos a entender el porqué más adelante y también vamos a ver formas de modificar este comportamiento.
+
+Objeto con varias propiedades iniciales
+Si queremos que nuestro objeto nazca con varias propiedades iniciales podemos seguir declarando otros datos dentro de las llaves separando a cada dato por una “,” (coma).
+
+```javascript
+const peli = { titulo:"Jurassic Park", estreno: 1993 };
+console.log(typeof peli, peli);
+```
+
+Separando el objeto en líneas
+Si bien no es necesario dividir la declaración del objeto en varias líneas de código, al querer declarar varias propiedades es mucho más fácil de leer si usamos varias líneas. Para eso la convención es dejar la coma separadora al final de cada línea.
+
+```javascript
+// con dos propiedades todavía es comodo tener todo en la misma linea
+const peli = { titulo:"Jurassic Park", estreno: 1993 };
+console.log(typeof peli, peli);
+
+// con muchas propiedades lo mejor es usar varias lineas
+const jurassicParkData = {
+  titulo: "Parque Jurásico",
+  sinopsis: "Un multimillonario construye un parque temático con dinosaurios clonados, pero todo sale mal cuando los dinosaurios escapan y aterrorizan a los visitantes.",
+  añoEstreno: 1993,
+  director: "Steven Spielberg",
+  duracionMinutos: 127,
+  calificacionIMDb: 8.1
+};
+```
+
+El uso de varias líneas para declarar muchas propiedades es posible ya que los indicadores que JavaScript atiende para entender dónde empieza y dónde termina el objeto: son las llaves.
+
+Indentación
+También notarán que al comienzo de cada línea dentro del objeto hay un espacio extra. Este espacio se conoce como indentación. La indentación sirve para poder leer rápidamente qué código está “dentro” de otro. No afecta al funcionamiento, es solo una ayuda para leer mejor el código. Vamos a aprender eventualmente como nuestro editor de código puede ayudarnos a formatear nuestro código para respetar las mejores prácticas.
+
+![alt text](image-38.png)
+
+Vamos a ver muchos casos donde usamos llaves {} para delimitar un bloque de código y en esas ocasiones vamos a indentar lo que esté dentro del bloque para entender rápidamente qué es lo que está sucediendo.
+
+Accediendo a las propiedades
+Una vez que tenemos un objeto creado, el objeto en sí es solo un contenedor de datos que vamos a utilizar. Para acceder a los datos de un objeto existen dos formas muy sencillas.
+
+```javascript
+const peli = {
+  titulo: "Jurassic Park",
+  añoEstreno: 1993,
+  director: "Steven Spielberg",
+  duracionMinutos: 127,
+};
+// esto mostrará todo el objeto
+console.log(peli);
+console.log(typeof peli);
+// el . nos permite ingresar a la propiedad título
+console.log(peli.titulo);
+console.log(typeof peli.titulo);
+
+// podemos usar las propiedades de los objetos como cualquier otro dato
+const textoA = "hola";
+const textoB = textoA;
+console.log(textoA, textoB);
+
+const nombreDePeli = peli.titulo;
+console.log(nombreDePeli);
+
+// la otra forma de acceder a una propiedad es 
+// usando corchetes y un string para indicarle el nombre de la propiedad
+// a la que queremos acceder
+
+// peli[nombreDeLaPropiedad]
+console.log(peli["director"]);
+
+// esta forma es especialmente util cuando queremos acceder
+// a una propiedad pero el nombre está determinado por alguna lógica
+// vamos a ver estos casos avanzados más adelante
+
+// también podemos usar el string guardado en otro dato
+const key = "director";
+console.log(peli[key]);
+
+const directorDePeli = peli[key];
+console.log(directorDePeli);
+// al nombre de la propiedad también se lo conoce como key o clave
+```
+Modificando y agregando nuevas propiedades
+Una vez que el objeto está creado podemos ingresar a sus propiedades para leer sus datos, modificarlos e inclusive crear nuevas propiedades.
+
+
+```javascript
+const peli = {
+  titulo: "Jurassic Park",
+};
+// esto mostrará todo el objeto
+console.log(peli);
+// el . nos permite ingresar a la propiedad título
+console.log(peli.titulo);
+
+// modificando una propiedad del objeto
+peli.titulo = "Parque Jurasico";
+
+console.log(peli);
+console.log(peli.titulo);
+
+// también podemos crear nuevas propiedades simplemente asignandoles un valor
+peli.estreno = 1993;
+// En este caso usamos el signo = porque no estamos creando el objeto
+// los : solo se usan en el formato JSON que usamos para crear objetos literales
+
+// también podemos usar los corchetes para crear nuevas propiedades
+peli["director"] = "Steven Spielberg";
+
+// también podemos crear un objeto vacío e ir llenandolo
+const persona = {};
+persona.nombre = "Marce";
+console.log(persona);
+```
+
+Objeto literal
+Los objetos que creamos utilizando JSON (llaves, dos puntos, etc) son llamados objetos literales. Estos son objetos que creamos directamente, sin ningún intermediario que lo genere. Existen otras formas de crear objetos a través de los llamados constructores que vamos a ver en profundidad en el Nivel 1 cuando nos adentremos al paradigma orientado a objetos.
+
+```javascript
+// creando un objeto literal
+const objetoLiteralFecha = {
+  day: 18,
+  month: 12,
+  year: 2022
+};
+console.log(objetoLiteralFecha.year);
+
+// usando un constructor
+const objetoCreadoPorUnConstructor = new Date("2022-12-18");
+console.log(objetoCreadoPorUnConstructor.getFullYear());
+```
+
+Conclusión
+Los objetos son fundamentales para la programación en JavaScript y en muchísimos otros lenguajes. Este pantallazo general es una introducción que nos sirve para entender qué son y cómo funcionan, pero no se preocupen en memorizar cosas ni tratar de imaginar casos de uso realistas ahora mismo. Los objetos son simplemente una forma de agrupar/estructurar datos. A partir de ahora vamos a usar objetos para todo y vamos a ir descubriendo otros mecanismos del lenguaje que en conjunto con los objetos nos van a permitir crear aplicaciones.
