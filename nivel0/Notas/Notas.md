@@ -1284,3 +1284,301 @@ console.log(objetoCreadoPorUnConstructor.getFullYear());
 
 Conclusión
 Los objetos son fundamentales para la programación en JavaScript y en muchísimos otros lenguajes. Este pantallazo general es una introducción que nos sirve para entender qué son y cómo funcionan, pero no se preocupen en memorizar cosas ni tratar de imaginar casos de uso realistas ahora mismo. Los objetos son simplemente una forma de agrupar/estructurar datos. A partir de ahora vamos a usar objetos para todo y vamos a ir descubriendo otros mecanismos del lenguaje que en conjunto con los objetos nos van a permitir crear aplicaciones.
+
+### Arrays
+
+Ya vimos que los objetos son cruciales para organizar datos que representam entidades como usuarios, productos o lugares. Una entidad en este contexto se refiere a un elemento o concepto del mundo real modelado en el sofware. Estas entidades representadas mediante **objetos**, permiten gestionar información de manera estructurada,definiendo propiedades y comportamientos únicos para cada categoría.
+
+Por ejemplo, un objeto representa a un usuario podría incluir propiedades como nombre, email y fecha de creación. Esta abstrapción facilita la manipulación de datos y la implementación de lógicas especificas en el desarollo de software.
+
+```js
+const usuario = {
+  id: 1,
+  email: "marce@apx.school",
+  fechaCreacion: "2019-09-01",
+  nombre: "Marce",
+  pais: "Argentina",
+  suscripcion: "Premium",
+  ultimaConexion: "2023-12-12",
+  intereses: ["Gastronomía", "Viajes", "Tecnología"],
+  redesSociales: {
+    instagram: "https://www.instagram.com/apx.school/",
+    tiktok: "https://www.tiktok.com/@apx.school",
+  },
+};
+
+// Producto
+const producto = {
+  id:23,
+  numeroProducto: "PRD001",
+  nombre: "Libro: El Señor de los Anillos",
+  precio: 100,
+  stock: 50,
+  descripcion: "Épica obra de J.R.R. Tolkien",
+  categoria: "Fantasía",
+  autor: "J.R.R. Tolkien",
+  editorial: "Editorial Fantasy",
+  fechaPublicacion: "1954-07-29",
+};
+
+// Objeto Lugar
+const lugar = {
+  latitud: 40.7128,
+  longitud: -74.0060,
+  nombre: "Pizzeria La Mezzeta",
+  tipo: "Pizzeria",
+  telefono: "+123456789",
+  direccion: "Av. Álvarez Thomas 1321, Buenos Aires",
+  ciudad: "Ciudad Ejemplo",
+  horario: "11:00 AM - 10:00 PM",
+};
+
+```
+
+### Listas
+Pero ¿Qué sucede si tenemos que organizar una lista de datos en un orden determinado?, ¿Qué pasa si queremos guardar una lista con los nombres de nuestras películas favoritas?
+Podriamos crear un objeto que tenga esa informació.
+
+```js
+const pelis  =  {
+  titanic: "Titanic",
+  jurassicPark: "Jurassic Park",
+  matrix: "Matrix",
+  forrestGump: "Forrest Gump",
+  pulpFiction: "Pulp Fiction",
+  theShawshankRedemption: "The Shawshank Redemption",
+  theLionKing: "El Rey León",
+  terminator2: "Terminator 2: Judgment Day",
+  theSilenceOfTheLambs: "El Silencio de los inocenes",
+  theMatrix: "Matrix",
+  braveheart: "Corazón Valiente",
+  theSixthSense: "El Sexto Sentido",
+  savingPrivateRyan: "Rescatando al Soldado Ryan",
+  theTrumanShow: "El Show de Truman",
+  theBigLebowski: "El Gran Lebowski",
+  fightClub: "Club de la Pelea",
+  theBlairWitchProject: "El Proyecto de la Bruja de Blair",
+  theFifthElement: "El Quinto Elemento",
+  theMummy: "La Momia",
+  austinPowers: "Austin Powers",
+  theMask: "La Máscara",
+  goodFellas: "Goodfellas",
+  clueless: "Clueless",
+  homeAlone: "Mi Pobre Angelito",
+};
+```
+
+Esto es totalmete válido pero tenemos un problema: tenemos que nombrar a cada propiedad. Esto nos obliga a inventar un nombre nuevo para cada propiedad que contenga el nombre de cada película. No es gravísimo pero se puede hacer mejor.
+
+#### ORDEN
+
+¿Y? qué pasa si quiero manipular una serie de pasos de una receta de cocina?. Necesito guardar esta información en un orden especifico. Los objetos no ordenan sus propiedades en ningun orden en particular, ya que cuando las accedemos, lo hacemos por su nombre y no hay nada que nos indique cuáal viene despues. Más allá de que escribamos en un orden no hay nada que nos indique cual es el primer paso salvo nuestra memoria.
+
+```js
+const receta = {
+  hornearTorta: "Hornea durante 30-40 minutos o hasta que al insertar un palillo este salga limpio.",
+  mezclarIngredientesSecos: "En un tazón grande, mezcla 2 tazas de harina, 1 taza de azúcar y 1 cucharadita de polvo de hornear.",
+  batirHuevosYLiquidos: "En otro recipiente, bate 3 huevos y agrégales 1 taza de leche y 1 taza de aceite vegetal.",
+  añadirVainilla: "Añade 1 cucharadita de extracto de vainilla y mezcla bien.",
+  prepararMolde: "Engrasa y enharina un molde para torta y vierte la masa en él.",
+  decorarTorta: "Decora la torta con frutas frescas o chocolate rallado según tu preferencia.",
+  enfriarTorta: "Deja enfriar la torta antes de desmoldarla.",
+  incorporarIngredientes: "Incorpora los ingredientes secos a la mezcla húmeda y revuelve hasta obtener una masa homogénea.",
+  precalentarHorno: "Precalienta el horno a 180°C.",
+};
+
+console.log("Algun paso:", receta.prepararMolde); 
+console.log("Otro paso:", receta.enfriarTorta);
+console.log("Algun otro paso:", receta.prepararMolde);
+
+// Al usar el nombre de la propiedad, no hay un orden específico
+// No tenemos una forma segura de acceder al "primer paso" o al "segundo paso"
+// En un software realista esta receta vendría de una base de datos y no podríamos saber como fué declarada. O sea, simplemente tendríamos acceso al objeto "receta".
+```
+
+#### Modificaciones
+Otro problema que tiene el uso de objetos para guardar una lista de cosas que puede ir creciendo o modificándose a lo largo de nuestro programa, es que tenemos que tener cuidado al modificar o agregar nuevos ítems ya que podemos llegar a pisar un dato existente.
+
+
+```js
+const carritoDeCompras = {
+  item1: "Remera negra",
+  item2: "Zapas deportivas",
+  item3: "Libro 'Demian' de Hermann Hesse",
+  item4: "Rompecabezas de 1000 piezas",
+};
+
+// Si eventualmente tengo que agregar un item a mi lista 
+carritoDeCompras.itemNuevo = "iPhone 13";
+
+// Si vuelvo a usar el mismo nombre puedo generar un efecto indeseado
+carritoDeCompras.itemNuevo = "Mazo de cartas";
+
+console.log(carritoDeCompras);
+```
+
+De nuevo, este problema de nombrar propiedades no es gravísimo pero se puede hacer mejor.
+
+#### Array
+Para resolver este problema de agrupar datos ordenados, JavaScript nos ofrece una estructura denominada array. Los arrays son un tipo de objeto especial que nos permite almacenar datos de manera ordenada, y a diferencia de otros objetos, no necesitamos asignar un nombre único a cada elemento individual.
+
+```js
+const carritoDeCompras = [
+  "Remera negra",
+  "Zapas deportivas",
+  "Libro 'Demian' de Hermann Hesse",
+  "Rompecabezas de 1000 piezas",
+];
+
+console.log(typeof carritoDeCompras);
+console.log(carritoDeCompras[0]);
+```
+
+Los elementos dentro de un array se numeran secuencialmente, comenzando desde el índice 0. La palabra "array" se refiere a un arreglo o colección ordenada de elementos o datos.
+
+#### Sintaxis
+Un array es un tipo de objeto que también se puede declarar de forma literal, o sea, simplemente asignando un array a su identificador. Vamos a ver más adelante que hay otras formas de generar arrays.
+
+```js
+// en un array podemos guardar cualquier cosa como en un objeto
+const listaDeCosas = ["Manzana", "Naranja", 42, true];
+
+console.log(typeof listaDeCosas);
+// console.log(listaDeCosas);
+```
+
+Los arrays al igual que los objetos permiten agrupar datos y estos datos pueden ser de cualquier tipo. La gran diferencia es que al declarar un array no necesitamos asignarle un nombre a cada miembro del conjunto. Simplemente agrupamos valores entre dos corchetes [] y los separamos por comas.
+
+```js
+const pelis = [
+  "Titanic",
+  "Jurassic Park",
+  "Matrix",
+  "Forrest Gump",
+  "Pulp Fiction"
+];
+```
+### Índice
+Si bien no le asignamos nombres a cada ítem dentro del array, cada dato dentro de esta estructura estará vinculado al número de índice dentro del array. Comenzando por el 0, vamos a poder usar el número que le corresponda para poder acceder al dato que necesitemos.
+
+![alt text](image-39.png)
+
+```js
+const paises = [
+  "Argentina",
+  "Francia",
+  "Croacia"
+];
+
+console.log("Primero:", paises[0]);
+console.log("Segundo:", paises[1]);
+console.log("Tercero:", paises[2]);
+```
+#### Modificaciones
+Utilizando el número de índice vamos a poder leer y también escribir datos en el array. Si utilizamos el índice de un ítem existente vamos a poder modificarlo y si nos referimos a una posición inexistente estaremos creando un nuevo ítem.
+
+```js
+const carritoDeCompras = [
+  "Zapas deportivas",
+  "Libro 'Demian' de Hermann Hesse",
+  "Rompecabezas de 1000 piezas",
+];
+
+console.log("Lista inicial:", carritoDeCompras);
+ 
+// cambio algo de la lista
+carritoDeCompras[2] = "Rompecabezas de 500 piezas";
+console.log("Lista actualizada:", carritoDeCompras);
+
+// agrego algo a la lista, lo puedo agregar de un dato existente
+const nuevoItem =   "Remera negra";
+console.log("Ahora en la posición 3:", carritoDeCompras[3]);
+
+carritoDeCompras[3] = nuevoItem;
+
+console.log("Después en la posición 3:", carritoDeCompras[3]);
+
+console.log("Lista final:", carritoDeCompras);
+```
+
+Si bien, modificar el array utilizando índices es una práctica muy común, más adelante vamos a aprender que existen formas más seguras de modificar un array, sobre todo cuando necesitamos agregar algo al final de la lista. Un caso muy común.
+
+#### Length
+Como mencionamos, un array es un objeto. Si bien se crea y se accede de una forma en particular, cada array es un objeto y tendrá, además de los valores que guardemos en el, una serie de propiedades. Una propiedad que vamos a utilizar frecuentemente es la propiedad length (longitud) que nos indica cuántos ítems hay en el array en ese momento.
+
+Esta propiedad es del tipo number y va cambiando automáticamente a medida que nuestro array cambia.
+
+```js
+const pelis = [
+  "Titanic",
+  "Jurassic Park",
+  "Matrix",
+  "Forrest Gump",
+  "Pulp Fiction"
+];
+
+console.log("Cantidad de pelis:", pelis.length);
+console.log("type of de pelis.length:", typeof pelis.length);
+```
+
+Como la propiedad length nos indica la longitud del array, este número siempre será uno más que la última posición de nuestro array.
+
+```js
+const pelis = [
+  "Titanic",
+  "Jurassic Park",
+  "Matrix"
+];
+
+console.log("Logitud:", pelis.length);
+console.log(pelis[0], pelis[1], pelis[2]);
+
+// console.log(pelis[3]);
+
+// Podemos usar el length para sumar cosas al array
+const logitudDeArrayEnEsteMomento = pelis.length;
+pelis[logitudDeArrayEnEsteMomento] =   "Forrest Gump";
+
+console.log("Length después primera modificación:", pelis.length);
+pelis[pelis.length] = "El padrino";
+// no podemos volvera usar logitudDeArrayEnEsteMomento porque quedó un valor desactualiado
+
+console.log("Cantidad de pelis:", pelis.length);
+console.log("pelis:", pelis);
+```
+
+#### Array vacío
+Al igual que otros objetos podemos crear un array sin ningún ítem inicial e ir agregando cosas a medida que transcurre nuestro programa.
+
+```js
+const listaDeCosas = [];
+console.log(listaDeCosas, listaDeCosas.length);
+
+// podemos ir metiendo cosas de cualquier tipo
+listaDeCosas[0] = true;
+console.log("Con un nuevo item:", listaDeCosas);
+
+// podemos repetir la técnica y sumar cosas usando el length para no tener que llevar la cuenta
+console.log("Antes de sumar el null", listaDeCosas.length);
+listaDeCosas[listaDeCosas.length] = null;
+console.log("Antes de sumar el texto", listaDeCosas.length);
+listaDeCosas[listaDeCosas.length] = "un texto";
+console.log("Antes de sumar el número", listaDeCosas.length);
+listaDeCosas[listaDeCosas.length] = 45;
+
+// inclusive podemos guardar otros objetos
+listaDeCosas[listaDeCosas.length] = {
+  nombre: "Marce",
+  apellido: "Zapaia",
+};
+
+console.log("Final:", listaDeCosas);
+
+// Podemos acceder a cada item a través de su número de indice (index)
+console.log(listaDeCosas[0]);
+```
+
+Conclusión
+Los arrays son fundamentales a la hora de programar en JavaScript. Pensemos que prácticamente cualquier aplicación necesita manipular listas de usuarios, productos, lugares y establecer relaciones entre estos.
+
+Tanto los arrays como los objetos forman parte de las estructuras más utilizadas en el día a día de cualquier dev que trabaje con JavaScript. Si bien ahora estamos viendo ejemplos y casos sencillos estos conceptos nos van a acompañar durante toda nuestra carrera. Y de ahora en más vamos a ver estas estructuras por todos lados.
