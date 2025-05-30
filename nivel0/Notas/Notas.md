@@ -1582,3 +1582,31 @@ Conclusión
 Los arrays son fundamentales a la hora de programar en JavaScript. Pensemos que prácticamente cualquier aplicación necesita manipular listas de usuarios, productos, lugares y establecer relaciones entre estos.
 
 Tanto los arrays como los objetos forman parte de las estructuras más utilizadas en el día a día de cualquier dev que trabaje con JavaScript. Si bien ahora estamos viendo ejemplos y casos sencillos estos conceptos nos van a acompañar durante toda nuestra carrera. Y de ahora en más vamos a ver estas estructuras por todos lados.
+
+
+### Coleccion
+Para este desafío vamos a utilizar una estructura muy simple pero muy potente a la que se conoce como collection (en inglés) o colección.
+
+```js
+// Ejemplo 
+const peliculas = [
+  {
+    titulo: "Jurassic Park",
+    director: "Steven Spielberg",
+    estreno: 1993,
+    genero: "Ciencia Ficción, Aventura",
+    sinopsis: "Un multimillonario y un pequeño equipo de científicos crean un parque temático de dinosaurios clonados a partir de ADN fósil. Sin embargo, las cosas no salen según lo planeado cuando las criaturas se escapan de sus recintos."
+  },
+  {
+    titulo: "Terminator",
+    director: "James Cameron",
+    estreno: 1984,
+    genero: "Ciencia Ficción, Acción",
+    sinopsis: "Un ciborg asesino es enviado desde el futuro para matar a Sarah Connor, cuyo hijo aún no nacido liderará la resistencia humana contra las máquinas en un futuro apocalíptico."
+  }
+];
+```
+
+Una collection es básicamente un array de objetos. Al combinar el poder de un array de agrupar datos ordenados y el poder de un objeto de agrupar datos que representan una entidad (una persona, un libro, un producto) obtenemos una de las estructuras más usadas a la hora de construir software ya que podemos representar listas de cosas. Y cuando nos ponemos a pensar en las aplicaciones que usamos en el día a día, todas nos permiten interactuar con listas de cosas (películas, productos, lugares).
+
+Gist
