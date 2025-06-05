@@ -20,6 +20,7 @@ const credito = 1000;
 const meAlcanza = precio <= tengo || precio <= credito;
 const hayStock = stock > 0;
 const puedoComprar = meAlcanza && hayStock;
+const noPuedoComprar = !puedoComprar;
 if (puedoComprar) {
   console.log("puedoComprar  " + puedoComprar);
 } else {
