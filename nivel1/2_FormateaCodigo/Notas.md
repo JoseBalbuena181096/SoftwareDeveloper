@@ -214,3 +214,18 @@ Cada problema que resolvés no solo soluciona el problema inmediato, sino que ta
 ## Conclusión
 
 Aprender a buscar respuestas efectivamente es una habilidad invaluable en el desarrollo de software. Te permite trabajar de manera más autónoma, resolver problemas más rápidamente y continuar aprendiendo y creciendo como dev. Con práctica, paciencia y curiosidad, desarrollarás esta habilidad de encontrar la información que necesitas para superar cualquier desafío que se te presente.
+
+## Pair programming
+
+El pair programming (programación en pareja) es una práctica super usada en el mundo de la programación.
+
+### ¿Cómo se hace PP?
+
+En PP hay dos roles.
+
+El conductor: es quien tiene el teclado y se enfoca en escribir el código. Su misión principal es plasmar las ideas en la pantalla.
+
+El navegador: es quien observa, revisa, y da sugerencias para mejorar el código o resolver problemas. También está pensando en los pasos futuros y en cómo encaja la solución en el proyecto general.
+
+La idea es turnarse e ir cambiando de rol cada 30 o 60 minutos.
+El truco está en la comunicación constante. El conductor no escribe a ciegas; explica lo que está haciendo, y el navegador no solo observa, sino que aporta ideas o señala posibles errores.
