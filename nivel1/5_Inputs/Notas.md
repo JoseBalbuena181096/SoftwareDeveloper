@@ -168,3 +168,108 @@ node --help
 Node.js soporta el argumento --help y nos muestra todas las opciones de uso.
 
 ![alt text](image-8.png)
+
+## Argumentos según yo
+
+Un argumento es un dato extra que le das al programa cuando lo inicias para decirle cómo debe funcionar.
+
+```bash
+node index.js
+#######👆🏼 esto es el argumento
+```
+
+Podemos hacer con ellos que los programas respondan de manera diferente dependiendo de los argumentos que le pasemos.
+
+```javascript
+console.log(process.argv);
+```
+
+## Argumentos
+
+Un argumento es un dato de entrada que nuestro programa recibe desde el exterior. En nuestras caso venimos usando la terminal para invocar a nuestro programa y es desde la misma terminal que vamos a enviarle datos a nuestro programa.
+
+![alt text](image-9.png)
+
+Este argumento es utilizado por nuestro código para tomar decisiones y modificar su comportamiento.
+
+## Decisiones
+
+Por ejemplo, si estuviéramos codeando una aplicación que nos muestre el clima de una ciudad en particular, es necesario poder indicarle a nuestro programa la ciudad a la que nos queremos referir.
+
+En nuestro caso, venimos ejecutando nuestro código desde la terminal, por ende, la forma más sencilla de enviarle información a nuestro programa es agregando información extra al final del comando que usamos para ejecutar nuestro programa.
+
+```bash
+> node clima.js "Buenos Aires"
+Hoy estará soleado ☀️ en Buenos Aires
+```
+
+De esta forma nuestro programa va a poder recibir y utilizar este dato.
+
+En el futuro vamos a entender como podemos enviarle data a nuestro código desde lugares que no son la terminal. Por ejemplo: la interfaz gráfica de una web.
+
+## process
+
+Para acceder a los datos enviados desde la terminal, vamos a utilizar un objeto generado por Node.js llamado process que tiene un muchísima información acerca del proceso que está sucediendo al ejecutar nuestro programa.
+
+Utiliza console.log() para imprimir el objeto process y observar su contenido.
+
+```javascript
+console.log(process);
+```
+
+Vas a notar que hay mucha información sobre la ubicación de tu programa y sobre Node.js. Por ahora solo vamos a usar un array en particular que se encuentra dentro del objeto process.
+
+## process.argv
+
+Dentro del objeto process existe un array de strings llamado argv (argument vector) que nos indica como fué llamado nuestro programa.
+
+Utiliza console.log() para imprimir argv y observar su contenido
+
+```javascript
+console.log(process.argv);
+```
+
+Para entender el objetivo de argv, prueba utilizando distintos argumentos al invocar tu programa:
+
+```bash
+> node programa.js un-argumento
+> node programa.js hola chau
+> node programa.js 1 2 3 4
+> node programa.js argumento-a 2 "hola"
+```
+
+En cada ejecución vas a ver como argv se llena de lo que le envíes desde la terminal.
+
+## process.argv[2]
+
+Ahora que examinamos un poco más el array process.argv, podemos empezar a utilizar la tercera posición del array para obtener el primer argumento enviado desde la terminal.
+
+```javascript
+const argumento = process.argv[2];
+console.log(argumento);
+```
+
+Y desde la terminal
+
+```bash
+> node programa.js 'texto enviado desde la terminal'
+```
+
+Utilizamos la posición [2] de process.argv ya que process.argv[0] y process.argv[1], corresponden a la primera parte de la invocación.
+
+```javascript
+const inicio = process.argv[0];
+console.log(inicio);
+
+const ruta = process.argv[1];
+console.log(ruta);
+
+const primerArgumento = process.argv[2];
+console.log(primerArgumento);
+```
+
+![alt text](image-10.png)
+
+## Conclusión
+
+El uso de process.argv para capturar datos que enviamos desde la terminal es uno de los tantos métodos que existen para enviarle información relevante a nuestro programa. Más allá de esta técnica en particular lo importante es entender que cualquier programa que creemos va a estar relacionado con información que venga desde el exterior (la terminal, una base de datos, un dato que el usuario nos envíe desde la web) y esto empieza a tornar a nuestras aplicaciones en piezas dinámicas y cada vez más realistas.
