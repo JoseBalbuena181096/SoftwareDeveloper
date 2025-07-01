@@ -1,0 +1,240 @@
+[
+  {
+    "title": "El Padrino",
+    "rating": 5,
+    "tags": ["drama", "crimen", "clásico"],
+    "year": 1972,
+    "director": "Francis Ford Coppola"
+  },
+  {
+    "title": "El Caballero de la Noche",
+    "rating": 5,
+    "tags": ["acción", "superhéroes", "suspenso"],
+    "year": 2008,
+    "director": "Christopher Nolan"
+  },
+  {
+    "title": "Parásitos",
+    "rating": 5,
+    "tags": ["drama", "suspenso", "premio Óscar"],
+    "year": 2019,
+    "director": "Bong Joon-ho"
+  },
+  {
+    "title": "El Señor de los Anillos: El Retorno del Rey",
+    "rating": 5,
+    "tags": ["fantasía", "aventura", "épico"],
+    "year": 2003,
+    "director": "Peter Jackson"
+  },
+  {
+    "title": "Titanic",
+    "rating": 4,
+    "tags": ["romance", "drama", "histórico"],
+    "year": 1997,
+    "director": "James Cameron"
+  },
+  {
+    "title": "El Club de la Pelea",
+    "rating": 5,
+    "tags": ["drama", "suspenso", "culto"],
+    "year": 1999,
+    "director": "David Fincher"
+  },
+  {
+    "title": "Origen",
+    "rating": 5,
+    "tags": ["ciencia ficción", "acción", "mente", "thriller"],
+    "year": 2010,
+    "director": "Christopher Nolan"
+  },
+  {
+    "title": "El Laberinto del Fauno",
+    "rating": 4,
+    "tags": ["fantasía", "drama", "guerra civil", "thriller"],
+    "year": 2006,
+    "director": "Guillermo del Toro"
+  },
+  {
+    "title": "Whiplash",
+    "rating": 5,
+    "tags": ["música", "drama", "intenso"],
+    "year": 2014,
+    "director": "Damien Chazelle"
+  },
+  {
+    "title": "El Gran Hotel Budapest",
+    "rating": 4,
+    "tags": ["comedia", "drama", "estilizado"],
+    "year": 2014,
+    "director": "Wes Anderson"
+  },
+  {
+    "title": "Interestelar",
+    "rating": 5,
+    "tags": ["ciencia ficción", "aventura", "espacio"],
+    "year": 2014,
+    "director": "Christopher Nolan"
+  },
+  {
+    "title": "El Silencio de los Inocentes",
+    "rating": 5,
+    "tags": ["suspenso", "crimen", "thriller"],
+    "year": 1991,
+    "director": "Jonathan Demme"
+  },
+  {
+    "title": "Matrix",
+    "rating": 5,
+    "tags": ["ciencia ficción", "acción", "filosófico", "thriller"],
+    "year": 1999,
+    "director": "Hermanas Wachowski"
+  },
+  {
+    "title": "Forrest Gump",
+    "rating": 5,
+    "tags": ["drama", "comedia", "histórico"],
+    "year": 1994,
+    "director": "Robert Zemeckis"
+  },
+  {
+    "title": "El Resplandor",
+    "rating": 4,
+    "tags": ["terror", "suspenso", "psicológico"],
+    "year": 1980,
+    "director": "Stanley Kubrick"
+  },
+  {
+    "title": "Pulp Fiction",
+    "rating": 5,
+    "tags": ["crimen", "drama", "no lineal"],
+    "year": 1994,
+    "director": "Quentin Tarantino"
+  },
+  {
+    "title": "El Viaje de Chihiro",
+    "rating": 5,
+    "tags": ["animación", "fantasía", "aventura"],
+    "year": 2001,
+    "director": "Hayao Miyazaki"
+  },
+  {
+    "title": "El Club de los Poetas Muertos",
+    "rating": 5,
+    "tags": ["drama", "educación", "inspirador"],
+    "year": 1989,
+    "director": "Peter Weir"
+  },
+  {
+    "title": "La La Land",
+    "rating": 4,
+    "tags": ["musical", "romance", "drama", "thriller"],
+    "year": 2016,
+    "director": "Damien Chazelle"
+  },
+  {
+    "title": "El Sexto Sentido",
+    "rating": 4,
+    "tags": ["suspenso", "drama", "sorpresa", "thriller"],
+    "year": 1999,
+    "director": "M. Night Shyamalan"
+  },
+  {
+    "title": "Avatar",
+    "rating": 5,
+    "tags": ["ciencia ficción", "aventura", "espacio"],
+    "year": 2009,
+    "director": "James Cameron"
+  },
+  {
+    "title": "La Llamada de lo Salvaje",
+    "rating": 5,
+    "tags": ["aventura", "drama", "naturaleza"],
+    "year": 1935,
+    "director": "William A. Wellman"
+  },
+  {
+    "title": "El Jinete Pálido",
+    "rating": 5,
+    "tags": ["wéstern", "drama", "clásico"],
+    "year": 1948,
+    "director": "John Ford"
+  },
+  {
+    "title": "El Padrino: Parte II",
+    "rating": 5,
+    "tags": ["crimen", "drama", "familias"],
+    "year": 1974,
+    "director": "Francis Ford Coppola"
+  },
+  {
+    "title": "Blade Runner",
+    "rating": 5,
+    "tags": ["ciencia ficción", "drama", "cyberpunk"],
+    "year": 1982,
+    "director": "Ridley Scott"
+  },
+  {
+    "title": "El Lado Oscuro del Corazón",
+    "rating": 4,
+    "tags": ["fantasía", "drama", "poético"],
+    "year": 1994,
+    "director": "Nicolás Saad"
+  },
+  {
+    "title": "El Hombre que Mató a Liberty Valance",
+    "rating": 5,
+    "tags": ["wéstern", "drama", "clásico"],
+    "year": 1962,
+    "director": "John Ford"
+  },
+  {
+    "title": "La Batalla de Argel",
+    "rating": 5,
+    "tags": ["guerra", "drama", "documental", "histórico"],
+    "year": 1966,
+    "director": "Gillo Pontecorvo"
+  },
+  {
+    "title": "La Vida de Brian",
+    "rating": 5,
+    "tags": ["comedia", "satírica", "religión"],
+    "year": 1979,
+    "director": "Terry Jones"
+  },
+  {
+    "title": "El Infierno de la Cocina",
+    "rating": 4,
+    "tags": ["comedia", "drama", "culinaria"],
+    "year": 2007,
+    "director": "Ratatouille"
+  },
+  {
+    "title": "La Casa de los Cuerpos Asesinados",
+    "rating": 5,
+    "tags": ["terror", "misterio", "psicológico"],
+    "year": 1974,
+    "director": "Juan López Moctezuma"
+  },
+  {
+    "title": "Los 7 Magníficos",
+    "rating": 5,
+    "tags": ["wéstern", "acción", "clásico"],
+    "year": 1960,
+    "director": "John Sturges"
+  },
+  {
+    "title": "El Poderoso Chef",
+    "rating": 4,
+    "tags": ["comedia", "drama", "culinaria"],
+    "year": 2014,
+    "director": "Jon Favreau"
+  },
+  {
+    "title": "El Mago de Oz",
+    "rating": 5,
+    "tags": ["fantasía", "aventura", "infantil"],
+    "year": 1939,
+    "director": "Victor Fleming"
+  }
+]
