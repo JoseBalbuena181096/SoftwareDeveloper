@@ -1,0 +1,14 @@
+{
+  "name": "emoji_dep",
+  "version": "1.0.0",
+  "description": "tes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "emoji-rankings": "^1.1.1"
+  }
+}
