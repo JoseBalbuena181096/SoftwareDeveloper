@@ -156,3 +156,157 @@ persona1.mostrarInfo();
 console.log("Persona 2:");
 persona2.mostrarInfo();
 ```
+
+## Instancias
+
+Ya vimos cómo declarar una clase. Pero, las clases no significan nada si no instanciamos objetos a partir de ellas. Instanciar objetos es el proceso de generar un ejemplar de una clase, es decir, la clase es la declaración de una forma y el objeto es un caso o elemento concreto que responde a esa forma.
+
+```ts
+class Persona {
+  nombre: string;
+  apellido: string;
+  fechaNacimiento: Date;
+
+  constructor(nombre: string, apellido: string, fechaNacimiento: Date) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.fechaNacimiento = fechaNacimiento;
+  }
+
+  getEdad(): number {
+    const today = new Date();
+    const diferenciaEntreFechas =
+      today.getFullYear() - this.fechaNacimiento.getFullYear();
+
+    // Verificar si aún no ha pasado el cumpleaños de la persona este año
+    if (
+      today.getMonth() < this.fechaNacimiento.getMonth() ||
+      (today.getMonth() === this.fechaNacimiento.getMonth() &&
+        today.getDate() < this.fechaNacimiento.getDate())
+    ) {
+      return diferenciaEntreFechas - 1;
+    } else {
+      return diferenciaEntreFechas;
+    }
+  }
+}
+
+const laura = new Persona("Laura", "Vitale", new Date("1995-08-05"));
+
+console.log(`${laura.nombre} ${laura.apellido} tiene ${laura.getEdad()} años.`);
+```
+
+En el ejemplo, para crear una instancia de la clase "Persona", utilizamos la palabra clave "new" seguida del nombre de la clase que deseamos instanciar. Luego, asignamos esta instancia a una constante, que en este caso llamamos "laura".
+
+```ts
+const laura = new Persona("Laura", "Vitale", new Date("1995-08-05"));
+```
+
+Como resultado, obtenemos un objeto llamado "laura" que se basa en la definición de la clase "Persona". A través de la notación de punto, podemos establecer valores para las propiedades como "nombre", "apellido" y "fechaNacimiento".
+
+De esta manera, creamos un objeto que posee las características especificadas en la clase "Persona". Además, podemos crear múltiples instancias de esta clase, cada una representando un objeto independiente con sus propios valores.
+
+## Métodos
+
+En el contexto de una clase, un método es una función que está asociada a esa clase y puede realizar acciones específicas o cálculos basados en los datos o propiedades de la instancia de la clase. Los métodos son parte fundamental de la Programación Orientada a Objetos (POO) y se utilizan para encapsular el comportamiento relacionado con la clase.
+
+```ts
+class Rectangulo {
+  ancho: number;
+  alto: number;
+
+  constructor(ancho: number, alto: number) {
+    this.ancho = ancho;
+    this.alto = alto;
+  }
+
+  calcularArea(): number {
+    return this.ancho * this.alto;
+  }
+
+  calcularPerimetro(): number {
+    return 2 * (this.ancho + this.alto);
+  }
+}
+
+// Crear una instancia de la clase Rectangulo
+const miRectangulo = new Rectangulo(5, 10);
+
+// Calcular el área y el perímetro utilizando los métodos
+const area = miRectangulo.calcularArea();
+const perimetro = miRectangulo.calcularPerimetro();
+
+console.log(`Área: ${area}`);
+console.log(`Perímetro: ${perimetro}`);
+```
+
+## Constructor
+
+Conozcamos otro elemento muy importante que podemos usar con las clases. Estamos hablando del método constructor, que es un tipo especial de método, que se ejecuta automáticamente cuando hacemos un new de una clase.
+
+Le podemos pasar argumentos al método constructor entre los paréntesis que le siguen al nombre de la clase que se está por instanciar. Estos argumentos son los valores iniciales del nuevo objeto que queremos crear.
+
+```ts
+class Persona {
+  nombre: string;
+  apellido: string;
+  fechaNacimiento: Date;
+  constructor(nombreParaArrancar: string) {
+    this.nombre = nombreParaArrancar;
+  }
+  getEdad() {
+    const today = new Date();
+    const diferenciaEntreFechas = today - this.fechaDeNacimiento;
+    // y todo lo demás para calcular la edad
+  }
+}
+const laura = new Persona("laura");
+console.log(laura.nombre);
+// laura
+```
+
+El método constructor de la clase Persona nos pide que, para instanciar un objeto, le pasemos como argumento el valor que le daremos a la propiedad nombre en el caso del objeto que estamos por crear.
+
+Entonces, la expresión new Persona("laura") que vemos en el ejemplo, significa que queremos crear una instancia de la clase Persona que tome al string “laura” como valor de la propiedad nombre.
+
+Gracias al método constructor podemos determinar ciertos valores mínimos que tienen que tener los objetos en el momento en el que son creados.
+
+## Clases con clases
+
+En este capítulo, vamos a aumentar la complejidad para entender todas las posibilidades que nos permiten las clases, con la ayuda de TypeScript.
+
+La clase Banda que creaste probablemente se ve así:
+
+```ts
+class Banda {
+  members: string[];
+  albums: object[];
+  constructor(members: string[], albums: object[]) {
+    this.members = members;
+    this.albums = albums;
+  }
+}
+```
+
+En el desafío, le indicamos al constructor que albums tiene que recibir el tipo de dato object[], o sea, cualquier array de objetos. Esa es la única condición.
+
+Ahora, imaginemos que queremos ser más específicos. En lugar de indicarle a albums que tiene que recibir un object[], podemos decirle que espere recibir otra clase, a la que le vamos a definir ciertas características.
+
+```ts
+class Album {
+  title: string;
+  songs: string[];
+}
+class Banda {
+  members: string[];
+  albums: object[];
+  constructor(members: string[], albums: Album[]) {
+    this.members = members;
+    this.albums = albums;
+  }
+}
+```
+
+Entonces, ahora especificamos en la clase Banda que uno de los parámetros de su constructor va a ser otra clase, a la que llamamos Albums. A su vez, le definimos a la clase Albums dos propiedades: title, que espera un string, y songs, que espera un array de strings.
+
+De esta forma, podemos ir formando una especie de red de clases, en la que unas nos ayudan a definir otras. El objetivo es que las estructuras de las clases sean análogas a la relación que tienen los objetos en el mundo real, tal como se espera en el paradigma de la programación orientada a objetos.
