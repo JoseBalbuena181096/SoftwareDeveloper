@@ -1,0 +1,26 @@
+{
+  "name": "testing-con-ava",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "ava",
+    "test:watch": "ava --watch"
+  },
+  "ava": {
+    "typescript": {
+      "rewritePaths": {
+        "src/": "dist/"
+      },
+      "compile": "tsc"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@ava/typescript": "^4.1.0",
+    "ava": "^6.0.1",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "test-runners-ava-intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx index.ts",
+    "test": "ava",
+    "build": "tsc"
+  },
+  "ava": {
+    "typescript": {
+      "rewritePaths": {
+        "src/": "dist/"
+      },
+      "compile": false
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@ava/typescript": "^6.0.0",
+    "ava": "^6.4.1",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}
