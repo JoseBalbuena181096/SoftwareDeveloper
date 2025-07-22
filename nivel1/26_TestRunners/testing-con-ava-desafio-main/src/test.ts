@@ -9,6 +9,7 @@ test("Testeo la clase Product", (t) => {
 });
 
 test("Testeo la clase User y sus métodos", (t) => {
+  // datos mockeados
   const user = new User("User 1");
   t.is(user.name, "User 1");
 });
