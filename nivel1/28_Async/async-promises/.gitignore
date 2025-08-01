@@ -1,0 +1,5 @@
+# Ignorar la carpeta de dependencias de Node
+node_modules/
+
+# Ignorar los archivos de JavaScript compilados
+*.js
